@@ -1,9 +1,6 @@
 name: Publish
 
-on:
-  push:
-    branches:
-      - *
+on: push
 
 jobs:
   build:
