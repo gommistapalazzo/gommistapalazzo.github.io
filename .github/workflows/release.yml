@@ -24,11 +24,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
       - name: Prepare env
-        env:
-          GATSBY_CONFIG: ${{ secrets.CONFIG }}
         run: |
-            rm gatsby-config.js
-            echo $GATSBY_CONFIG | base64 -d > ./gatsby-config.js
+            echo ${{ secrets.CONFIG }} | base64 -d > ./gatsby-config.js
       - run: npm ci
       #- run: npm run format
       #- run: npm run test
