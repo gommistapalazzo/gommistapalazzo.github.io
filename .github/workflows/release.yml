@@ -28,7 +28,7 @@ jobs:
           GATSBY_CONFIG: ${{ secrets.CONFIG }}
         run: |
             rm gatsby-config.js
-            echo GATSBY_CONFIG > gatsby-config.js
+            echo $GATSBY_CONFIG > gatsby-config.js
       - run: npm ci
       #- run: npm run format
       #- run: npm run test
