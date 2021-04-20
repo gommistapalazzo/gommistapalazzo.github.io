@@ -23,7 +23,12 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-
+      - name: Prepare env
+        env:
+          GATSBY_CONFIG: ${{ secrets.CONFIG }}
+        run: |
+            rm gatsby-config.js
+            echo GATSBY_CONFIG > gatsby-config.js
       - run: npm ci
       #- run: npm run format
       #- run: npm run test

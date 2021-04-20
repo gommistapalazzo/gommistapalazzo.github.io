@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-starter-hello-world",
+  "name": "GommistaPalazzo",
   "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
+  "description": "Official Site",
   "version": "0.1.0",
   "license": "0BSD",
   "scripts": {
@@ -16,12 +16,19 @@
   },
   "dependencies": {
     "@material-ui/core": "^4.11.3",
-    "gatsby": "^3.2.1",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "@material-ui/icons": "^4.11.2",
+    "@material-ui/lab": "^4.0.0-alpha.57",
+    "gatsby": "^3.3.1",
+    "gatsby-plugin-typography": "^3.3.0",
+    "gatsby-source-google-places": "0.0.7",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-horizontal-scrolling-menu": "^0.7.10",
+    "react-typography": "^0.16.19",
+    "typography": "^0.16.19",
+    "typography-theme-fairy-gates": "^0.16.19"
   },
   "devDependencies": {
-    "gatsby-plugin-material-ui": "^3.0.1",
     "gh-pages": "^3.1.0",
     "prettier": "2.2.1"
   },
