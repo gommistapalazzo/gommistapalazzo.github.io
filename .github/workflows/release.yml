@@ -27,7 +27,7 @@ jobs:
       #- run: npm run format
       #- run: npm run test
       - run: |
-          echo ${{ secrets.CONFIG }} > ./gatsby-config.js.base64
+          echo "${{ secrets.CONFIG }}" > ./gatsby-config.js.base64
           base64 -d ./gatsby-config.js.base64 > ./gatsby-config.js
           npm run build
 
