@@ -1,10 +1,10 @@
 import React from "react"
-import { MuiThemeProvider, CssBaseline } from "@material-ui/core"
-import theme from '../themes/dark'
+import { MuiThemeProvider, CssBaseline, Grid, Avatar } from "@material-ui/core"
+import theme from "../themes/dark"
 import BasicAppBar from "../components/BasicAppBar.component"
 import { graphql, StaticQuery } from "gatsby"
 import ReviewCard from "../components/ReviewCard.component"
-import Carousel from 'react-material-ui-carousel'
+import Carousel from "react-material-ui-carousel"
 
 export default class Home extends React.Component {
   render() {
@@ -13,13 +13,13 @@ export default class Home extends React.Component {
         <CssBaseline />
         <BasicAppBar child={<Index />} />
       </MuiThemeProvider>
-    );
+    )
   }
 }
 
 class Index extends React.Component {
   render() {
-    return(
+    return (
       <StaticQuery
         query={graphql`
         query {
@@ -36,15 +36,33 @@ class Index extends React.Component {
             }
           }
       `}
-      render={data => (
-        <React.Fragment>
+        render={data => (
+          <>
+            <Grid
+              container
+              spacing={0}
+              direction="column"
+              alignItems="center"
+              justify="center"
+            >
+              <Avatar alt="Micheline icon"
+                      src="https://github.com/gommistapalazzo/icons/blob/main/res/mipmap-xxxhdpi/ic_launcher.png?raw=true"
+                      style={{
+                        marginTop: 20,
+                        width: theme.spacing(30),
+                        height: theme.spacing(30),
+                      }}
+              />
+            </Grid>
             <Carousel
-              autoPlay={true  }
+              autoPlay={true}
+              navButtonsAlwaysVisible={false}
+              animation="slide"
             >
               {
                 data.googlePlacesPlace.childrenGooglePlacesReview.map((author, index) => (
                   <ReviewCard
-                    key={index}
+                    keyVal={index}
                     authorName={author.author_name}
                     authorRate={author.rating}
                     authorImage={author.profile_photo_url}
@@ -53,9 +71,9 @@ class Index extends React.Component {
                 ))
               }
             </Carousel>
-          </React.Fragment>
-      )}
+          </>
+        )}
       />
-    );
+    )
   }
 }
