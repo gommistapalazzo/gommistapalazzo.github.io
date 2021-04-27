@@ -1,0 +1,2 @@
+(self.webpackChunkGommistaPalazzo=self.webpackChunkGommistaPalazzo||[]).push([[883],{9616:function(t,e,n){"use strict";n.r(e);var r=n(3552),o=n(7294),u=function(t){function e(){return t.apply(this,arguments)||this}return(0,r.Z)(e,t),e.prototype.render=function(){return o.createElement("p",null," 404 error")},e}(o.Component);e.default=u}}]);
+//# sourceMappingURL=component---src-pages-404-js-bc063e53964dfd0ac87b.js.map
