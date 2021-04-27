@@ -1,11 +1,10 @@
 import React from "react"
-import { MuiThemeProvider, CssBaseline, Box } from "@material-ui/core"
-import  {ArrowLeft, ArrowRight} from '@material-ui/icons'
+import { MuiThemeProvider, CssBaseline } from "@material-ui/core"
 import theme from '../themes/dark'
 import BasicAppBar from "../components/BasicAppBar.component"
 import { graphql, StaticQuery } from "gatsby"
 import ReviewCard from "../components/ReviewCard.component"
-import ScrollMenu from 'react-horizontal-scrolling-menu';
+import Carousel from 'react-material-ui-carousel'
 
 export default class Home extends React.Component {
   render() {
@@ -17,20 +16,6 @@ export default class Home extends React.Component {
     );
   }
 }
-
-// One item component
-// selected prop will be passed
-const Review = ({text}) => {
-  return <div
-  >{text}</div>;
-};
-
-// All items component
-// Important! add unique key
-export const Reviews = (list) =>
-  list.map(author => {
-    return ;
-  });
 
 class Index extends React.Component {
   render() {
@@ -53,18 +38,21 @@ class Index extends React.Component {
       `}
       render={data => (
         <React.Fragment>
-            <ScrollMenu
-              arrowLeft={<ArrowLeft/>}
-              arrowRight={<ArrowRight />}
-              data={data.googlePlacesPlace.childrenGooglePlacesReview.map((author, index) => (
-                <ReviewCard
-                  authorName={author.author_name}
-                  authorRate={author.rating}
-                  authorImage={author.profile_photo_url}
-                  authorText={author.text}
-                />
-              ))}
-            />
+            <Carousel
+              autoPlay={true  }
+            >
+              {
+                data.googlePlacesPlace.childrenGooglePlacesReview.map((author, index) => (
+                  <ReviewCard
+                    key={index}
+                    authorName={author.author_name}
+                    authorRate={author.rating}
+                    authorImage={author.profile_photo_url}
+                    authorText={author.text}
+                  />
+                ))
+              }
+            </Carousel>
           </React.Fragment>
       )}
       />

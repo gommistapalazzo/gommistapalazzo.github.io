@@ -11,9 +11,9 @@ import theme from "../themes/dark"
 
 class ReviewCard extends React.Component {
   render() {
-    const { authorName, authorRate, authorText, authorImage} = this.props
+    const { authorName, authorRate, authorText, authorImage, key} = this.props
     return (
-      <Box width={1 / 4} borderRadius={16} style={{margin: 6}}>
+      <Box key={key} width={1 / 4} borderRadius={16} style={{margin: 6}}>
         <Paper elevation={5}>
           <Card>
             <CardActionArea>
