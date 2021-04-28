@@ -23,5 +23,17 @@ module.exports = {
          ],
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: 'Icon Site',
+        short_name: 'iconsite',
+        start_url: '/',
+        background_color: '#f7f0eb',
+        theme_color: '#a2466c',
+        display: 'standalone',
+        icon: 'src/imgs/favicon.png',
+      },
+    }
   ],
 }

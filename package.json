@@ -20,6 +20,7 @@
     "@material-ui/lab": "^4.0.0-alpha.57",
     "gatsby": "^3.3.1",
     "gatsby-plugin-google-gtag": "^3.4.0",
+    "gatsby-plugin-manifest": "^3.4.0",
     "gatsby-plugin-typography": "^3.3.0",
     "gatsby-source-google-places": "0.0.7",
     "react": "^17.0.2",
