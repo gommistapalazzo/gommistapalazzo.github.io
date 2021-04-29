@@ -59,6 +59,8 @@ class Index extends React.Component {
                 text
                 rating
                 profile_photo_url
+                relative_time_description
+                author_url
               }
               user_ratings_total
             }
@@ -88,7 +90,7 @@ class Index extends React.Component {
               showDots={true}
               infinite={true}
               autoPlay={true}
-              autoPlaySpeed={1000}
+              autoPlaySpeed={5000}
               keyBoardControl={true}
               responsive={this.state.responsive}
             >
@@ -99,6 +101,8 @@ class Index extends React.Component {
                   authorRate={item.rating}
                   authorImage={item.profile_photo_url}
                   authorText={item.text}
+                  dateReview={item.relative_time_description}
+                  link={item.author_url}
                 />
               )}
             </Carousel>
