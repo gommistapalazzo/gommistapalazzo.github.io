@@ -7,6 +7,7 @@ import { graphql, StaticQuery } from "gatsby"
 // import style
 import "react-multi-carousel/lib/styles.css"
 import ReviewPanel from "../components/ReviewPanel.component"
+import { Rating } from "@material-ui/lab"
 
 export default class Home extends React.Component {
   render() {
@@ -36,7 +37,11 @@ class Index extends React.Component {
                 relative_time_description
                 author_url
               }
-              user_ratings_total
+              rating
+              opening_hours {
+                  open_now
+                  weekday_text
+                }
             }
           }
       `}
@@ -56,6 +61,12 @@ class Index extends React.Component {
                         width: theme.spacing(30),
                         height: theme.spacing(30)
                       }}
+              />
+              <Rating name="half-rating-read"
+                      style={{ content: "center" }}
+                      defaultValue={data.googlePlacesPlace.rating}
+                      precision={0.5}
+                      readOnly
               />
             </Grid>
             <ReviewPanel items={data.googlePlacesPlace.childrenGooglePlacesReview} />
