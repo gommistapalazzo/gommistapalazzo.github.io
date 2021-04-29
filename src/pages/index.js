@@ -57,8 +57,8 @@ class Index extends React.Component {
                       src="https://github.com/gommistapalazzo/icons/blob/main/res/mipmap-xxxhdpi/ic_launcher.png?raw=true"
                       style={{
                         marginTop: 20,
-                        width: theme.spacing(20),
-                        height: theme.spacing(20)
+                        width: theme.spacing(22),
+                        height: theme.spacing(25)
                       }}
               />
               <Typography color="textSecondary"
