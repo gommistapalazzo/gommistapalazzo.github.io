@@ -1,5 +1,5 @@
 import React from "react"
-import { MuiThemeProvider, CssBaseline, Grid, Avatar } from "@material-ui/core"
+import { MuiThemeProvider, CssBaseline, Grid, Avatar, Typography } from "@material-ui/core"
 import theme from "../themes/dark"
 import BasicAppBar from "../components/BasicAppBar.component"
 import { graphql, StaticQuery } from "gatsby"
@@ -37,7 +37,6 @@ class Index extends React.Component {
                 relative_time_description
                 author_url
               }
-              rating
               opening_hours {
                   open_now
                   weekday_text
@@ -62,6 +61,11 @@ class Index extends React.Component {
                         height: theme.spacing(30)
                       }}
               />
+              <Typography color="textSecondary"
+                          component="p"
+                          style={{ wordWrap: "break-word", fontSize: 20, margin: 2 }}>
+                {data.googlePlacesPlace.name}
+              </Typography>
               <Rating name="half-rating-read"
                       style={{ content: "center" }}
                       defaultValue={data.googlePlacesPlace.rating}
