@@ -35,14 +35,6 @@ class Gallery extends React.Component {
                 title="Contemplative Reptile"
               />
             </CardActionArea>
-            <CardActions>
-              <Button dark size="small" color="primary">
-                Share
-              </Button>
-              <Button dark size="small" color="primary">
-                Learn More
-              </Button>
-            </CardActions>
           </Card>
           </Grid>
         )}
@@ -51,4 +43,14 @@ class Gallery extends React.Component {
   }
 }
 
+/**
+ * <CardActions>
+ <Button dark size="small" color="primary">
+ Share
+ </Button>
+ <Button dark size="small" color="primary">
+ Learn More
+ </Button>
+ </CardActions>
+ */
 export default Gallery;

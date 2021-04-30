@@ -30,6 +30,9 @@ jobs:
           echo "${{ secrets.ENV }}" > ./.env.production.base64
           base64 -d ./.env.production.base64 > ./.env.production
           npm run build
+        env:
+          GATSBY_GOOGLE_PLACES: ${{ secrets.GOOGLE_PLACES }}
+          GATSBY_GOOGLE_ANALYTICS: ${{ secrets.GOOGLE_ANALYTICS }}
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
