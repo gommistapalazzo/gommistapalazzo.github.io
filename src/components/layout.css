@@ -1,0 +1,5 @@
+@import "../css/typography.css";
+
+.infoPanel {
+    font-family: 'DS-Digital Italic', georgia, serif;
+}

@@ -12,6 +12,7 @@ const dark = createMuiTheme({
     background: {
       default: '#24292e',
       paper: '#24292e',
+      dark: '#1e2428'
     },
     text: {
       primary: '#959da5',
