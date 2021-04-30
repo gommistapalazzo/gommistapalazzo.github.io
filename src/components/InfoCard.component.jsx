@@ -1,17 +1,19 @@
 import React from "react"
 import {Card, CardContent, CardAction, IconButton} from "ui-neumorphism"
 import { Box, CardMedia, Grid, styled, Typography } from "@material-ui/core"
-import {Call} from "@material-ui/icons"
+import {Call, Share, Facebook} from "@material-ui/icons"
 import 'ui-neumorphism/dist/index.css'
 import './layout.css'
 import HelpIcon from "../imgs/help.svg"
 import CloseIcon from "../imgs/closed-sign.svg"
+import theme from "../themes/dark"
 
 const DigitalTypography = styled(Typography)({
   fontFamily: "DS-Digital Italic",
   wordWrap: "break-word",
+  color: theme.palette.text.primary,
   fontSize: 26,
-  margin: 2,
+  margin: 6,
 });
 
 class InfoCard extends React.Component {
@@ -39,22 +41,13 @@ class InfoCard extends React.Component {
             />
             {openingInfo.weekday_text.map((day, index) =>
               <Grid key={index} container direction="row" justify="center">
-                <Grid item>
-                  <Typography color="textSecondary"
-                              component="span"
-                              justify="center"
-                              style={{ wordWrap: "break-word", fontSize: 26, margin: 2 }}>
-                    {day.split(":")[0].charAt(0).toUpperCase() + day.split(":")[0].slice(1)}
-                  </Typography>
-                </Grid>
-                <Box mr={4} />
                 <DigitalTypography
                   key={index}
                   color="textSecondary"
                   component="span">
-                  {day.split(":").length < 3 && <Grid container direction="row" alignItems="center">
+                  {day.length <= 16 && <Grid container direction="row" alignItems="center">
                     <Grid item>
-                      {day.substring(day.split(":")[0].length + 1, day.length)}
+                      {day.replace("Chiuso", "")}
                     </Grid>
                     <Box mr={6} />
                     <Grid item>
@@ -66,16 +59,32 @@ class InfoCard extends React.Component {
                     </Grid>
                   </Grid>
                   }
-                  {day.split(":").length >= 3 && day.substring(day.split(":")[0].length + 1, day.length)}
+                  {day.length > 16 && day}
                 </DigitalTypography>
               </Grid>
             )}
           </Grid>
         </CardContent>
         <CardAction>
-          <IconButton rounded text={false} size='large'>
-            <Call />
-          </IconButton>
+          <Grid container
+                direction="column"
+                alignItems="center"
+                justify="center"
+                style={{padding: 30}}
+                spacing={3}>
+            <Grid item>
+              <IconButton dark style={{marginLeft: 10, marginRight: 10, padding: 10}} rounded text={false} size='large'>
+                <Call color={theme.palette.text.primary} />
+              </IconButton>
+              <IconButton dark style={{marginLeft: 10, marginRight: 10, padding: 10}} rounded text={false} size='large'>
+                <Facebook color={theme.palette.text.primary}/>
+              </IconButton>
+              <IconButton dark style={{marginLeft: 10, marginRight: 10, padding: 10}} rounded text={false} size='large'>
+                <Share color={theme.palette.text.primary}/>
+              </IconButton>
+            </Grid>
+          </Grid>
+
         </CardAction>
       </Card>
     );

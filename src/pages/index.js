@@ -94,12 +94,12 @@ class Index extends React.Component {
                       precision={0.5}
                       readOnly
               />
-              <Box m={theme.spacing(0.1)}/>
+              <Box m={theme.spacing(0.5)}/>
               <InfoCard openingInfo={data.googlePlacesPlace.opening_hours} />
-              <Box m={theme.spacing(0.1)} />
+              <Box m={theme.spacing(0.5)} />
             </Grid>
             <ReviewPanel items={data.googlePlacesPlace.childrenGooglePlacesReview} />
-            <Box m={theme.spacing(4)}/>
+            <Box m={theme.spacing(1)}/>
           </>
         )}
       />
