@@ -4,7 +4,7 @@ module.exports = {
       resolve: `gatsby-source-google-places`,
       options: {
         placeIds: ["ChIJF5C_TSdCPxMRcsQmuiXuKt0"],
-        apiKey: process.env.GOOGLE_PLACES,
+        apiKey: process.env.GATSBY_GOOGLE_PLACES,
         language: "it-IT", // optional, defaults to en-US
       },
     },
@@ -19,7 +19,7 @@ module.exports = {
       options: {
         // You can add multiple tracking ids and a pageview event will be fired for all of them.
         trackingIds: [
-          process.env.GOOGLE_ANALYTICS, // Google Analytics / GA
+          process.env.GATSBY_GOOGLE_ANALYTICS, // Google Analytics / GA
          ],
       },
     },

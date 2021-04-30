@@ -12,7 +12,7 @@ class GalleryView extends React.Component {
         id: "QlBzK9i3M-M",
         playerVars: {
           // https://developers.google.com/youtube/player_parameters
-          autoplay: 1
+          autoplay: 0
         }
       }
     }
@@ -26,7 +26,7 @@ class GalleryView extends React.Component {
             allGooglePlacesPlace {
                 nodes {
                   photos {
-                    html_attributions
+                    photo_reference
                   }
                 }
               }

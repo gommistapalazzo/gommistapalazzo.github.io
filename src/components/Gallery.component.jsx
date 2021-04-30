@@ -1,8 +1,20 @@
 import React from "react"
-import { Card, CardActionArea, CardActions, CardMedia, Grid } from "@material-ui/core"
-import {Button} from "ui-neumorphism"
+import {CardActionArea, CardActions, CardMedia, Grid } from "@material-ui/core"
+import {Button, Card} from "ui-neumorphism"
 
 class Gallery extends React.Component {
+
+  constructor(props, context) {
+    super(props, context)
+
+    this.makeUrl = this.makeUrl.bind(this);
+  }
+
+  makeUrl(idPhoto) {
+    // maxwidth=$maxwidth&
+    return `https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photoreference=${idPhoto}&key=${process.env.GATSBY_GOOGLE_PLACES}`
+  }
+
   render() {
     let {photos} = this.props;
     return (
@@ -13,21 +25,21 @@ class Gallery extends React.Component {
         justify="center"
       >
         {photos.map((photo, index) => <Grid item key={index}>
-          <Card>
-            <CardActionArea>
+          <Card dark style={{margin: 10}}>
+            <CardActionArea style={{padding: 10}}>
               <CardMedia
                 component="img"
                 alt="Contemplative Reptile"
-                height="140"
-                image={photo.html_attributions[0].match(/\bhttps?:\/\/\S+/gi)[0]}
+                height="350"
+                image={this.makeUrl(photo.photo_reference)}
                 title="Contemplative Reptile"
               />
             </CardActionArea>
             <CardActions>
-              <Button size="small" color="primary">
+              <Button dark size="small" color="primary">
                 Share
               </Button>
-              <Button size="small" color="primary">
+              <Button dark size="small" color="primary">
                 Learn More
               </Button>
             </CardActions>
