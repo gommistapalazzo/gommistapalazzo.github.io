@@ -1,6 +1,6 @@
 import React from "react"
-import {CardActionArea, CardActions, CardMedia, Grid } from "@material-ui/core"
-import {Button, Card} from "ui-neumorphism"
+import {CardActionArea, CardMedia, Grid } from "@material-ui/core"
+import {Card} from "ui-neumorphism"
 
 class Gallery extends React.Component {
 

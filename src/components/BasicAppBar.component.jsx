@@ -12,12 +12,6 @@ import {
 import {Menu, Home, Info, Photo} from "@material-ui/icons"
 import theme from '../themes/dark'
 
-const WhiteTextTypography = withStyles({
-  root: {
-    color: theme.palette.text.primary
-  }
-})(Typography);
-
 class BasicAppBar extends React.Component {
   render() {
     const {child, value, changeValue} = this.props
@@ -30,9 +24,9 @@ class BasicAppBar extends React.Component {
             <IconButton onClick={()=> console.log("Click on menu icon")} disabled={true} edge="start" color="inherit" aria-label="menu">
               <Menu />
             </IconButton>
-            <WhiteTextTypography variant="h6">
+            <Typography color={theme.palette.text.primary} variant="h6">
               Gommista Palazzo Carmine
-            </WhiteTextTypography>
+            </Typography>
           </Toolbar>
         </AppBar>
         {child}
