@@ -8,6 +8,7 @@ import ReviewPanel from "../components/ReviewPanel.component"
 import { Rating } from "@material-ui/lab"
 import InfoCard from "../components/InfoCard.component"
 import { overrideThemeVariables } from "ui-neumorphism"
+import GalleryView from "./gallery"
 
 export default class Home extends React.Component {
 
@@ -45,7 +46,7 @@ export default class Home extends React.Component {
         pageName = "home"
         break
       case "gallery":
-        page = <p> TODO: We are working on</p>
+        page = <GalleryView />
         pageName = "gallery"
         break;
       case "info":
