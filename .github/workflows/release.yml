@@ -26,10 +26,10 @@ jobs:
       - run: npm ci
       #- run: npm run format
       #- run: npm run test
-      - run: |
-          echo "${{ secrets.CONFIG }}" > ./gatsby-config.js.base64
-          base64 -d ./gatsby-config.js.base64 > ./gatsby-config.js
-          npm run build
+      - run: npm run build
+        env:
+          GOOGLE_ANALYTICS: ${{ secrets.GOOGLE_ANALYTICS }}
+          GOOGLE_PLACES: ${{ secrets.GOOGLE_PLACES }}
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

@@ -2,17 +2,18 @@ import React from "react"
 import { graphql, StaticQuery } from "gatsby"
 import { Box, Grid } from "@material-ui/core"
 import YouTube from "react-youtube"
+import Gallery from "../components/Gallery.component"
 
 class GalleryView extends React.Component {
   constructor(props, context) {
     super(props, context)
     this.state = {
-      video : {
+      video: {
         id: "QlBzK9i3M-M",
         playerVars: {
           // https://developers.google.com/youtube/player_parameters
-          autoplay: 1,
-        },
+          autoplay: 1
+        }
       }
     }
   }
@@ -22,22 +23,13 @@ class GalleryView extends React.Component {
       <StaticQuery
         query={graphql`
         query {
-            googlePlacesPlace {
-              name
-              rating
-              childrenGooglePlacesReview {
-                author_name
-                text
-                rating
-                profile_photo_url
-                relative_time_description
-                author_url
-              }
-              opening_hours {
-                  open_now
-                  weekday_text
+            allGooglePlacesPlace {
+                nodes {
+                  photos {
+                    html_attributions
+                  }
                 }
-            }
+              }
           }
       `}
         render={data => (
@@ -51,11 +43,14 @@ class GalleryView extends React.Component {
             >
               <Box mt={2} />
               <YouTube videoId={this.state.video.id} opts={this.state.video} />
+              <Box mt={2} />
+              <Gallery photos={data.allGooglePlacesPlace.nodes[0].photos} />
             </Grid>
           </>
         )}
       />
-    );
+    )
   }
 }
-export default GalleryView;
+
+export default GalleryView
