@@ -3,8 +3,6 @@ import { MuiThemeProvider, CssBaseline, Grid, Avatar, Typography, Box } from "@m
 import theme from "../themes/dark"
 import BasicAppBar from "../components/BasicAppBar.component"
 import { graphql, StaticQuery } from "gatsby"
-
-// import style
 import "react-multi-carousel/lib/styles.css"
 import ReviewPanel from "../components/ReviewPanel.component"
 import { Rating } from "@material-ui/lab"
@@ -12,6 +10,17 @@ import InfoCard from "../components/InfoCard.component"
 import { overrideThemeVariables } from "ui-neumorphism"
 
 export default class Home extends React.Component {
+
+  constructor(props, context) {
+    super(props, context)
+    this.state = {
+      pageName: "home",
+      page: <Index />
+    }
+
+    this.changePage = this.changePage.bind(this);
+  }
+
   componentDidMount() {
     overrideThemeVariables({
       '--light-bg': '#E9B7B9',
@@ -25,11 +34,38 @@ export default class Home extends React.Component {
       '--primary-light': theme.palette.primary.light
     })
   }
+
+  changePage(value) {
+    let page;
+    let pageName;
+    console.log("Value is: ", value)
+    switch (value) {
+      case "home":
+        page = <Index />
+        pageName = "home"
+        break
+      case "gallery":
+        page = <p> TODO: We are working on</p>
+        pageName = "gallery"
+        break;
+      case "info":
+        page = <p>TODO We are working on</p>
+        pageName = "info"
+        break;
+      default:
+        throw new Error("Error page not exist")
+    }
+    this.setState({
+      page: page,
+      pageName: pageName
+    })
+  }
+
   render() {
     return (
       <MuiThemeProvider theme={theme}>
         <CssBaseline />
-        <BasicAppBar child={<Index />} />
+        <BasicAppBar child={this.state.page} value={this.state.pageName} changeValue={this.changePage}/>
       </MuiThemeProvider>
     )
   }

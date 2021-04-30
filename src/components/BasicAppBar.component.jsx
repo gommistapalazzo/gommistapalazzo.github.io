@@ -9,7 +9,7 @@ import {
   Typography,
   withStyles
 } from "@material-ui/core"
-import {Menu, Home, Info, RoomService} from "@material-ui/icons"
+import {Menu, Home, Info, Photo} from "@material-ui/icons"
 import theme from '../themes/dark'
 
 const WhiteTextTypography = withStyles({
@@ -20,14 +20,14 @@ const WhiteTextTypography = withStyles({
 
 class BasicAppBar extends React.Component {
   render() {
-    const {child, value} = this.props
+    const {child, value, changeValue} = this.props
     return (
       <Container maxWidth="xl">
         <AppBar position="sticky" style={{
           backgroundColor: theme.palette.background.paper
         }}>
           <Toolbar>
-            <IconButton onClick={()=> console.log("Click on menu icon")} edge="start" color="inherit" aria-label="menu">
+            <IconButton onClick={()=> console.log("Click on menu icon")} disabled={true} edge="start" color="inherit" aria-label="menu">
               <Menu />
             </IconButton>
             <WhiteTextTypography variant="h6">
@@ -43,12 +43,11 @@ class BasicAppBar extends React.Component {
         }}>
           <BottomNavigation
             value={value}
-            onChange={(event, newValue) => console.log(`New Value ${newValue}`)}
-            showLabels
+            onChange={(event, newValue) => changeValue(newValue)}
           >
-            <BottomNavigationAction label="Services" icon={<RoomService />} />
-            <BottomNavigationAction label="Home" icon={<Home />} />
-            <BottomNavigationAction label="Info" icon={<Info />} />
+            <BottomNavigationAction label="Services" value="gallery" icon={<Photo />} />
+            <BottomNavigationAction label="Home" value="home" icon={<Home />} />
+            <BottomNavigationAction label="Info" value="info" icon={<Info />} />
           </BottomNavigation>
         </AppBar>
       </Container>
