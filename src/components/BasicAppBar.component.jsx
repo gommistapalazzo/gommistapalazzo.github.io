@@ -7,7 +7,6 @@ import {
   IconButton,
   Toolbar,
   Typography,
-  withStyles
 } from "@material-ui/core"
 import {Menu, Home, Info, Photo} from "@material-ui/icons"
 import theme from '../themes/dark'
@@ -24,7 +23,7 @@ class BasicAppBar extends React.Component {
             <IconButton onClick={()=> console.log("Click on menu icon")} disabled={true} edge="start" color="inherit" aria-label="menu">
               <Menu />
             </IconButton>
-            <Typography color={theme.palette.text.primary} variant="h6">
+            <Typography color="textSecondary" variant="h6">
               Gommista Palazzo Carmine
             </Typography>
           </Toolbar>
@@ -34,6 +33,12 @@ class BasicAppBar extends React.Component {
           backgroundColor: theme.palette.background.paper,
           top: "auto",
           bottom: 0,
+          width: "30%",
+          marginLeft: "35%",
+          marginRight: "35%",
+          padding: "0.4em",
+          borderTopRightRadius: "10px",
+          borderTopLeftRadius: "10px",
         }}>
           <BottomNavigation
             value={value}
