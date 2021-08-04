@@ -1,6 +1,12 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 
 const dark = createMuiTheme({
+  typography: {
+    fontFamily: [
+      'Roboto',
+      'DS-Digital Italic',
+    ].join(','),
+  },
   palette: {
     type: 'dark',
     primary: {

@@ -9,6 +9,7 @@ import { Rating } from "@material-ui/lab"
 import InfoCard from "../components/InfoCard.component"
 import { overrideThemeVariables } from "ui-neumorphism"
 import GalleryView from "./gallery"
+import ServicesComponent from "../components/Services.component"
 
 export default class Home extends React.Component {
 
@@ -50,7 +51,7 @@ export default class Home extends React.Component {
         pageName = "gallery"
         break;
       case "info":
-        page = <p>TODO We are working on</p>
+        page = <ServicesComponent />
         pageName = "info"
         break;
       default:
