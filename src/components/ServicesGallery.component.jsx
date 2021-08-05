@@ -1,10 +1,9 @@
 import React from "react"
-import { CardActionArea, Grid } from "@material-ui/core"
-import { Card } from "ui-neumorphism"
+import { Button, CardActionArea, CardActions, Card, CardContent, CardMedia, Grid, Typography } from "@material-ui/core"
 
 class ServicesGallery extends React.Component {
   render() {
-    const {listServices} = this.props;
+    const { listServices } = this.props
     return <Grid
       container
       spacing={0}
@@ -12,14 +11,37 @@ class ServicesGallery extends React.Component {
       justify="center"
     >
       {listServices.map((service, index) => <Grid item key={index}>
-          <Card dark style={{margin: 10}}>
-            <CardActionArea style={{padding: 10}}>
-              <p>{service.name}</p>
+          <Card>
+            <CardActionArea>
+              <CardMedia
+                component="img"
+                alt="Contemplative Reptile"
+                height="350"
+                image={service.photoHome}
+                title="Contemplative Reptile"
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="h2">
+                  {service.name}
+                </Typography>
+                <Typography variant="body2" color="textSecondary" component="p">
+                  {service.description}
+                </Typography>
+              </CardContent>
             </CardActionArea>
+            <CardActions>
+              <Button size="small" color="primary">
+                Share
+              </Button>
+              <Button size="small" color="primary">
+                Learn More
+              </Button>
+            </CardActions>
           </Card>
         </Grid>
       )}
     </Grid>
   }
 }
-export default ServicesGallery;
+
+export default ServicesGallery

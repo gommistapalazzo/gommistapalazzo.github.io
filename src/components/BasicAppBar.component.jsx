@@ -36,7 +36,7 @@ class BasicAppBar extends React.Component {
           width: "30%",
           marginLeft: "35%",
           marginRight: "35%",
-          padding: "0.4em",
+          padding: "0.1em",
           borderTopRightRadius: "10px",
           borderTopLeftRadius: "10px",
         }}>
@@ -44,9 +44,9 @@ class BasicAppBar extends React.Component {
             value={value}
             onChange={(event, newValue) => changeValue(newValue)}
           >
-            <BottomNavigationAction label="Services" value="gallery" icon={<Photo />} />
+            <BottomNavigationAction label="Galleria" value="gallery" icon={<Photo />} />
             <BottomNavigationAction label="Home" value="home" icon={<Home />} />
-            <BottomNavigationAction label="Info" value="info" icon={<Info />} />
+            <BottomNavigationAction label="Servizi" value="info" icon={<Info />} />
           </BottomNavigation>
         </AppBar>
       </Container>

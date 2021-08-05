@@ -1,1 +1,5 @@
 @import "../css/typography.css";
+
+.time-view {
+    font-family: "DS-Digital Italic", serif !important;
+}

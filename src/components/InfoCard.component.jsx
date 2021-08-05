@@ -9,7 +9,6 @@ import CloseIcon from "../imgs/closed-sign.svg"
 import theme from "../themes/dark"
 
 const DigitalTypography = styled(Typography)({
-  fontFamily: "DS-Digital Italic",
   wordWrap: "break-word",
   color: theme.palette.text.primary,
   fontSize: 26,
@@ -43,6 +42,7 @@ class InfoCard extends React.Component {
               <Grid key={index} container direction="row" justify="center">
                 <DigitalTypography
                   key={index}
+                  className="time-view"
                   color="textSecondary"
                   component="span">
                   {day.length <= 16 && <Grid container direction="row" alignItems="center">
