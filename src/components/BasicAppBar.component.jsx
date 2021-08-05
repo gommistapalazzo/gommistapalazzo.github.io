@@ -29,17 +29,8 @@ class BasicAppBar extends React.Component {
           </Toolbar>
         </AppBar>
         {child}
-        <AppBar position="fixed" style={{
-          backgroundColor: theme.palette.background.paper,
-          top: "auto",
-          bottom: 0,
-          width: "30%",
-          marginLeft: "35%",
-          marginRight: "35%",
-          padding: "0.1em",
-          borderTopRightRadius: "10px",
-          borderTopLeftRadius: "10px",
-        }}>
+        <AppBar position="fixed" className="navigation-style"
+                 style={{ backgroundColor: theme.palette.background.paper }}>
           <BottomNavigation
             value={value}
             onChange={(event, newValue) => changeValue(newValue)}

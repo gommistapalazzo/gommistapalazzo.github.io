@@ -11,8 +11,6 @@ import theme from "../themes/dark"
 const DigitalTypography = styled(Typography)({
   wordWrap: "break-word",
   color: theme.palette.text.primary,
-  fontSize: 26,
-  margin: 6,
 });
 
 class InfoCard extends React.Component {
@@ -20,7 +18,7 @@ class InfoCard extends React.Component {
     let {openingInfo, style} = this.props;
 
     return (
-      <Card style={style} dark elevation={4}>
+      <Card className="time-card" style={style} dark elevation={4}>
         <CardContent>
           <Grid container
                 direction="column"
