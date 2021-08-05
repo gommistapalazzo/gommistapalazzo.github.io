@@ -45,6 +45,7 @@ class GalleryView extends React.Component {
               <YouTube videoId={this.state.video.id} opts={this.state.video} />
               <Box mt={2} />
               <Gallery photos={data.allGooglePlacesPlace.nodes[0].photos} />
+              <Box mb={10} />
             </Grid>
           </>
         )}

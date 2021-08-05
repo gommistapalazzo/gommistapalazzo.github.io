@@ -63,7 +63,7 @@ class ReviewCard extends React.Component {
           </Grid>
           <Grid item xs={2}>
             <IconButton
-              size={10}
+              size="medium"
               aria-label="share"
               onClick={() => window.open(link, '_blank', 'noopener,noreferrer')}>
               <OpenInBrowser style={{ color: theme.palette.text.primary }} />

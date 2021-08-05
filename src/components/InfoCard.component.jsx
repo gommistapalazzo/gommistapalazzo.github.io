@@ -1,21 +1,20 @@
 import React from "react"
-import {Card, CardContent, CardAction, IconButton} from "ui-neumorphism"
+import { Card, CardContent, CardAction, IconButton } from "ui-neumorphism"
 import { Box, CardMedia, Grid, styled, Typography } from "@material-ui/core"
-import {Call, Share, Facebook} from "@material-ui/icons"
-import 'ui-neumorphism/dist/index.css'
-import './layout.css'
+import { Call, Share, Facebook } from "@material-ui/icons"
+import "ui-neumorphism/dist/index.css"
+import "./layout.css"
 import HelpIcon from "../imgs/help.svg"
-import CloseIcon from "../imgs/closed-sign.svg"
 import theme from "../themes/dark"
 
 const DigitalTypography = styled(Typography)({
   wordWrap: "break-word",
-  color: theme.palette.text.primary,
-});
+  color: theme.palette.text.primary
+})
 
 class InfoCard extends React.Component {
   render() {
-    let {openingInfo, style} = this.props;
+    let { openingInfo, style } = this.props
 
     return (
       <Card className="time-card" style={style} dark elevation={4}>
@@ -24,7 +23,6 @@ class InfoCard extends React.Component {
                 direction="column"
                 alignItems="center"
                 justify="center"
-                style={{padding: 30}}
                 spacing={3}>
             <Typography color="textSecondary"
                         component="span"
@@ -32,34 +30,32 @@ class InfoCard extends React.Component {
                         style={{ wordWrap: "break-word", fontSize: 30 }}>
             </Typography>
             <CardMedia
-              style={{width: 80, height: 80}}
+              style={{ width: 80, height: 80 }}
               image={HelpIcon}
               title="Paella dish"
             />
+            <Box mr={2} />
             {openingInfo.weekday_text.map((day, index) =>
-              <Grid key={index} container direction="row" justify="center">
-                <DigitalTypography
-                  key={index}
-                  className="time-view"
-                  color="textSecondary"
-                  component="span">
-                  {day.length <= 16 && <Grid container direction="row" alignItems="center">
-                    <Grid item>
-                      {day.replace("Chiuso", "")}
-                    </Grid>
-                    <Box mr={6} />
-                    <Grid item>
-                      <CardMedia
-                        style={{width: 60, height: 60}}
-                        image={CloseIcon}
-                        title="Paella dish"
-                      />
-                    </Grid>
-                  </Grid>
-                  }
-                  {day.length > 16 && day}
-                </DigitalTypography>
-              </Grid>
+              <>
+                <Grid key={index * 20} container direction="row" justify="center">
+                  <DigitalTypography
+                    key={index * 40 + 1}
+                    className="time-day"
+                    style={{color: theme.palette.primary.light}}
+                    component="span">
+                    {day.split(":")[0]}
+                  </DigitalTypography>
+                </Grid>
+                <Grid key={index * 30 + 2} container direction="row" justify="center">
+                  <DigitalTypography
+                    key={index * 50 + 3}
+                    className="time-view"
+                    color="textSecondary"
+                    component="span">
+                    {day.split(":").map((val, index) => index === 0 ? "" : (index === day.split(":").length - 1 ? val : val + ":"))}
+                  </DigitalTypography>
+                </Grid>
+              </>
             )}
           </Grid>
         </CardContent>
@@ -68,25 +64,28 @@ class InfoCard extends React.Component {
                 direction="column"
                 alignItems="center"
                 justify="center"
-                style={{padding: 30}}
+                style={{ padding: 30 }}
                 spacing={3}>
             <Grid item>
-              <IconButton dark style={{marginLeft: 10, marginRight: 10, padding: 10}} rounded text={false} size='large'>
-                <Call color={theme.palette.text.primary} />
+              <IconButton dark style={{ marginLeft: 10, marginRight: 10, padding: 10 }} rounded text={false}
+                          size="large">
+                <Call/>
               </IconButton>
-              <IconButton dark style={{marginLeft: 10, marginRight: 10, padding: 10}} rounded text={false} size='large'>
-                <Facebook color={theme.palette.text.primary}/>
+              <IconButton dark style={{ marginLeft: 10, marginRight: 10, padding: 10 }} rounded text={false}
+                          size="large">
+                <Facebook />
               </IconButton>
-              <IconButton dark style={{marginLeft: 10, marginRight: 10, padding: 10}} rounded text={false} size='large'>
-                <Share color={theme.palette.text.primary}/>
+              <IconButton dark style={{ marginLeft: 10, marginRight: 10, padding: 10 }} rounded text={false}
+                          size="large">
+                <Share />
               </IconButton>
             </Grid>
           </Grid>
 
         </CardAction>
       </Card>
-    );
+    )
   }
 }
 
-export default InfoCard;
+export default InfoCard

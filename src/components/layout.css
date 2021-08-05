@@ -13,11 +13,21 @@
 }
 
 .time-card {
-    padding: 1em;
+    padding: 2em 8em;
+}
+
+.time-day {
+    font-family: "DS-Digital Italic", serif !important;
+    font-size: 30px;
 }
 
 .time-view {
     font-family: "DS-Digital Italic", serif !important;
     font-size: 26px;
-    margin: 0.5em;
+    margin: 0.2em;
+}
+
+.video-style {
+    width: 100%;
+    margin: 4em;
 }

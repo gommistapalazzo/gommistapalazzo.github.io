@@ -10,6 +10,7 @@ import InfoCard from "../components/InfoCard.component"
 import { overrideThemeVariables } from "ui-neumorphism"
 import GalleryView from "./gallery"
 import ServicesComponent from "../components/Services.component"
+import { Helmet } from "react-helmet"
 
 export default class Home extends React.Component {
 
@@ -67,6 +68,11 @@ export default class Home extends React.Component {
     return (
       <MuiThemeProvider theme={theme}>
         <CssBaseline />
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>Gommista Palazzo</title>
+          <link rel="canonical" href="https://gommistapalazzo.github.io/" />
+        </Helmet>
         <BasicAppBar child={this.state.page} value={this.state.pageName} changeValue={this.changePage}/>
       </MuiThemeProvider>
     )

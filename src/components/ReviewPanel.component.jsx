@@ -43,7 +43,8 @@ class ReviewPanel extends React.Component {
       >
         {items.map((item, index) =>
           <ReviewCard
-            keyVal={index}
+            key={index}
+            keyVal={index * 10}
             authorName={item.author_name}
             authorRate={item.rating}
             authorImage={item.profile_photo_url}

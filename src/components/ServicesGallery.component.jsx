@@ -6,7 +6,7 @@ class ServicesGallery extends React.Component {
     const { listServices } = this.props
     return <Grid
       container
-      spacing={0}
+      spacing={4}
       alignItems="center"
       justify="center"
     >
