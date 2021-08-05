@@ -27,14 +27,13 @@ class InfoCard extends React.Component {
             <Typography color="textSecondary"
                         component="span"
                         justify="center"
-                        style={{ wordWrap: "break-word", fontSize: 30 }}>
+                        style={{ wordWrap: "break-word", fontSize: "2em" }}>
             </Typography>
             <CardMedia
               style={{ width: 80, height: 80 }}
               image={HelpIcon}
               title="Paella dish"
             />
-            <Box mr={2} />
             {openingInfo.weekday_text.map((day, index) =>
               <>
                 <Grid key={index * 20} container direction="row" justify="center">

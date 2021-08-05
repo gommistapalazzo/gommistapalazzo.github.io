@@ -5,11 +5,6 @@
     padding-bottom: 0.5em;
     top: auto !important;
     bottom: 0 !important;
-    width: 30% !important;
-    margin-left: 35% !important;
-    margin-right: 35% !important;
-    border-top-right-radius: 10px !important;
-    border-top-left-radius: 10px !important;
 }
 
 .time-card {
@@ -18,7 +13,7 @@
 
 .time-day {
     font-family: "DS-Digital Italic", serif !important;
-    font-size: 30px;
+    font-size: 2em;
 }
 
 .time-view {

@@ -2,11 +2,11 @@ import React from "react"
 import {
   AppBar,
   BottomNavigation,
-  BottomNavigationAction,
+  BottomNavigationAction, Box,
   Container,
   IconButton,
   Toolbar,
-  Typography,
+  Typography
 } from "@material-ui/core"
 import {Menu, Home, Info, Photo} from "@material-ui/icons"
 import theme from '../themes/dark'
@@ -29,6 +29,7 @@ class BasicAppBar extends React.Component {
           </Toolbar>
         </AppBar>
         {child}
+        <Box m={theme.spacing(2)}/>
         <AppBar position="fixed" className="navigation-style"
                  style={{ backgroundColor: theme.palette.background.paper }}>
           <BottomNavigation

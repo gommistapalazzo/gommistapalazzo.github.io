@@ -6,7 +6,9 @@ class ServicesGallery extends React.Component {
     const { listServices } = this.props
     return <Grid
       container
+      style={{marginTop: "1em"}}
       spacing={4}
+      direction="column"
       alignItems="center"
       justify="center"
     >
@@ -21,10 +23,10 @@ class ServicesGallery extends React.Component {
                 title="Contemplative Reptile"
               />
               <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
+                <Typography gutterBottom variant="h5" color="textPrimary" component="h2">
                   {service.name}
                 </Typography>
-                <Typography variant="body2" color="textSecondary" component="p">
+                <Typography variant="body2" color="textPrimary" component="p">
                   {service.description}
                 </Typography>
               </CardContent>
