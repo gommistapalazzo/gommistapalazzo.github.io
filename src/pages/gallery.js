@@ -9,8 +9,8 @@ class GalleryView extends React.Component {
     super(props, context)
     this.state = {
       video: {
-        height: !window ? '390' : (window.innerWidth <= 600 ? '190' : '390'),
-        width: !window ? '640' : (window.innerWidth <= 600 ? '340' : '640'),
+        height: '390',
+        width: '640',
         id: "QlBzK9i3M-M",
         playerVars: {
           // https://developers.google.com/youtube/player_parameters
