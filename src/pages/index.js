@@ -18,7 +18,7 @@ export default class Home extends React.Component {
     super(props, context)
     this.state = {
       pageName: "home",
-      page: <Index />
+      page: <Index />,
     }
 
     this.changePage = this.changePage.bind(this);

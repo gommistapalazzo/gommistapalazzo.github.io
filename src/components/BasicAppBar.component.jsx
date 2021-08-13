@@ -10,8 +10,32 @@ import {
 } from "@material-ui/core"
 import {Menu, Home, Info, Photo} from "@material-ui/icons"
 import theme from '../themes/dark'
+import Loading from "../components/Loading"
 
 class BasicAppBar extends React.Component {
+
+  constructor(props, context) {
+    super(props, context)
+    this.state = {
+      ready: false,
+    }
+    this.loadDom = this.loadDom.bind(this);
+  }
+
+
+  componentDidMount() {
+    this.loadDom()
+  }
+
+  loadDom() {
+    new Promise((resolve) => setTimeout(() => resolve(), 1000))
+      .then(() => {
+        // In case of error we can remove the loading view
+        if (!this.state.ready)
+          this.setState({ready: true}); // showing the app
+      });
+  }
+
   render() {
     const {child, value, changeValue} = this.props
     return (
@@ -28,13 +52,18 @@ class BasicAppBar extends React.Component {
             </Typography>
           </Toolbar>
         </AppBar>
-        {child}
+
+        {this.state.ready ? child : <Loading />}
         <Box m={theme.spacing(2)}/>
         <AppBar position="fixed" className="navigation-style"
                  style={{ backgroundColor: theme.palette.background.paper }}>
           <BottomNavigation
             value={value}
-            onChange={(event, newValue) => changeValue(newValue)}
+            onChange={(event, newValue) => {
+              this.setState({ready: false});
+              changeValue(newValue)
+              this.loadDom()
+            }}
           >
             <BottomNavigationAction label="Galleria" value="gallery" icon={<Photo />} />
             <BottomNavigationAction label="Home" value="home" icon={<Home />} />

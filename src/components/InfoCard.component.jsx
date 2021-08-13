@@ -1,6 +1,6 @@
 import React from "react"
 import { Card, CardContent, CardAction, IconButton } from "ui-neumorphism"
-import { Box, CardMedia, Grid, styled, Typography } from "@material-ui/core"
+import { CardMedia, Grid, styled, Typography } from "@material-ui/core"
 import { Call, Share, Facebook } from "@material-ui/icons"
 import "ui-neumorphism/dist/index.css"
 import "./layout.css"
