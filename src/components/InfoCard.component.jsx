@@ -35,8 +35,8 @@ class InfoCard extends React.Component {
               title="Paella dish"
             />
             {openingInfo.weekday_text.map((day, index) =>
-              <>
-                <Grid key={index * 20} container direction="row" justify="center">
+              <Grid container direction="column" alignItems="center" justify="center">
+                <Grid key={index * 20} item direction="row" justify="center">
                   <DigitalTypography
                     key={index * 40 + 1}
                     className="time-day"
@@ -45,7 +45,7 @@ class InfoCard extends React.Component {
                     {day.split(":")[0]}
                   </DigitalTypography>
                 </Grid>
-                <Grid key={index * 30 + 2} container direction="row" justify="center">
+                <Grid key={index * 30 + 2} item direction="row" justify="center">
                   <DigitalTypography
                     key={index * 50 + 3}
                     className="time-view"
@@ -54,7 +54,7 @@ class InfoCard extends React.Component {
                     {day.split(":").map((val, index) => index === 0 ? "" : (index === day.split(":").length - 1 ? val : val + ":"))}
                   </DigitalTypography>
                 </Grid>
-              </>
+              </Grid>
             )}
           </Grid>
         </CardContent>
