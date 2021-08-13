@@ -1,5 +1,5 @@
 import React from "react"
-import { MuiThemeProvider, CssBaseline, Grid, Avatar, Typography, Box } from "@material-ui/core"
+import {CssBaseline, Grid, Avatar, Typography, Box } from "@material-ui/core"
 import theme from "../themes/dark"
 import BasicAppBar from "../components/BasicAppBar.component"
 import { graphql, StaticQuery } from "gatsby"
@@ -11,6 +11,9 @@ import { overrideThemeVariables } from "ui-neumorphism"
 import GalleryView from "./gallery"
 import ServicesComponent from "../components/Services.component"
 import { Helmet } from "react-helmet"
+import Loading from "../components/Loading"
+import { ThemeProvider } from '@material-ui/core/styles';
+import ReactLoading from "react-loading";
 
 export default class Home extends React.Component {
 
@@ -19,9 +22,11 @@ export default class Home extends React.Component {
     this.state = {
       pageName: "home",
       page: <Index />,
+      ready: false
     }
 
     this.changePage = this.changePage.bind(this);
+    this.loadDom = this.loadDom.bind(this);
   }
 
   componentDidMount() {
@@ -35,7 +40,8 @@ export default class Home extends React.Component {
       '--primary': theme.palette.primary.main,
       '--primary-dark': theme.palette.primary.dark,
       '--primary-light': theme.palette.primary.light
-    })
+    });
+    this.loadDom();
   }
 
   changePage(value) {
@@ -60,13 +66,24 @@ export default class Home extends React.Component {
     }
     this.setState({
       page: page,
-      pageName: pageName
+      pageName: pageName,
     })
   }
 
+  loadDom() {
+    new Promise((resolve) => setTimeout(() => resolve(), 1000))
+      .then(() => {
+        // In case of error we can remove the loading view
+        if (!this.state.ready)
+          this.setState({ready: true}); // showing the app
+      });
+  }
+
   render() {
+    if (!this.state.ready)
+      return <div className="loading-dom"> <ReactLoading type="bars"/> </div>;
     return (
-      <MuiThemeProvider theme={theme}>
+      <ThemeProvider theme={theme}>
         <CssBaseline />
         <Helmet>
           <meta charSet="utf-8" />
@@ -74,7 +91,7 @@ export default class Home extends React.Component {
           <link rel="canonical" href="https://gommistapalazzo.github.io/" />
         </Helmet>
         <BasicAppBar child={this.state.page} value={this.state.pageName} changeValue={this.changePage}/>
-      </MuiThemeProvider>
+      </ThemeProvider>
     )
   }
 }

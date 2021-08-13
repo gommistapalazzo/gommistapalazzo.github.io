@@ -1,5 +1,15 @@
 @import "../css/typography.css";
 
+body {
+    background-color: #24292e;
+}
+
+.loading-dom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .navigation-style {
     padding-top: 1em;
     padding-bottom: 0.5em;

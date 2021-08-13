@@ -29,6 +29,7 @@
     "react-helmet": "^6.1.0",
     "react-loading": "^2.0.3",
     "react-multi-carousel": "^2.6.2",
+    "react-player": "^2.9.0",
     "react-typography": "^0.16.19",
     "react-youtube": "^7.13.1",
     "typography": "^0.16.19",

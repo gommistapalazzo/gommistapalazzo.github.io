@@ -33,10 +33,7 @@ class ServicesGallery extends React.Component {
             </CardActionArea>
             <CardActions>
               <Button size="small" color="primary">
-                Share
-              </Button>
-              <Button size="small" color="primary">
-                Learn More
+                Scopri di più
               </Button>
             </CardActions>
           </Card>

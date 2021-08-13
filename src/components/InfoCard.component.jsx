@@ -50,7 +50,7 @@ class InfoCard extends React.Component {
                     key={index * 50 + 3}
                     className="time-view"
                     color="textSecondary"
-                    component="span">
+                    component="p">
                     {day.split(":").map((val, index) => index === 0 ? "" : (index === day.split(":").length - 1 ? val : val + ":"))}
                   </DigitalTypography>
                 </Grid>
