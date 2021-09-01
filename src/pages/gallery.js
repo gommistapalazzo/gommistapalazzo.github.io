@@ -1,27 +1,17 @@
 import React from "react"
 import { graphql, StaticQuery } from "gatsby"
-import { Box, CardActionArea, Grid } from "@material-ui/core"
+import { Box, CardActionArea, Grid, Container } from "@material-ui/core"
 import Gallery from "../components/Gallery.component"
 import { Card } from "ui-neumorphism"
 
 class GalleryView extends React.Component {
   constructor(props, context) {
     super(props, context)
-    this.state = {
-      video: {
-        width: "200%",
-        id: "QlBzK9i3M-M",
-        playerVars: {
-          // https://developers.google.com/youtube/player_parameters
-          autoplay: 0
-        }
-      }
-    }
   }
 
   render() {
     return (
-      <>
+      <Container fixed>
         <StaticQuery
           query={graphql`
         query {
@@ -45,7 +35,7 @@ class GalleryView extends React.Component {
               <Grid item xs={12}>
                 <Card dark>
                   <CardActionArea>
-                    <iframe style={{position: "relative", height: "45vh", width: "45vw", margin: 10}}
+                    <iframe className="video-style"
                             src="https://www.youtube.com/embed/QlBzK9i3M-M"
                             title="YouTube video player" frameBorder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -60,7 +50,7 @@ class GalleryView extends React.Component {
             </Grid>
           )}
         />
-      </>
+      </Container>
     )
   }
 }

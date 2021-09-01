@@ -49,7 +49,6 @@ class Gallery extends React.Component {
                   visibled={this.state.ready}
                   component="img"
                   alt="Contemplative Reptile"
-                  height="350"
                   image={this.makeUrl(photo.photo_reference)}
                   title="Contemplative Reptile"
                 />
