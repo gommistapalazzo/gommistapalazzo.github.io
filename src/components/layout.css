@@ -18,18 +18,20 @@ body {
 }
 
 .time-card {
+    min-width: 15em;
     padding: 2em 8em;
 }
 
 .time-day {
+    min-width: 10em;
     font-family: "DS-Digital Italic", serif !important;
-    font-size: 2em;
+    font-size: 30px;
 }
 
 .time-view {
+    min-width: 10em;
     font-family: "DS-Digital Italic", serif !important;
     font-size: 26px;
-    margin: 0.2em;
 }
 
 .video-style {

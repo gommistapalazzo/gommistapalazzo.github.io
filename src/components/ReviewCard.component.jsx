@@ -1,12 +1,12 @@
 import React from "react"
 import {
-  Avatar, Box,
+  Avatar,
   Card, CardActions,
   CardContent, CardHeader, Grid, IconButton,
   Typography
 } from "@material-ui/core"
 import { Rating } from "@material-ui/lab"
-import {OpenInBrowser} from "@material-ui/icons"
+import {Link} from "@material-ui/icons"
 import theme from "../themes/dark"
 
 class ReviewCard extends React.Component {
@@ -25,6 +25,7 @@ class ReviewCard extends React.Component {
           title={authorName}
           subheader={
             <Typography
+              noWrap={false}
               color="textSecondary"
               component="p"
               style={{ wordWrap: "break-word", fontSize: 14, margin: 2 }}
@@ -35,18 +36,13 @@ class ReviewCard extends React.Component {
           }
         />
         <CardContent>
-          <Box
-            fontSize="h2"
-            component="div"
-            overflow="hidden"
-            whiteSpace="pre-line"
-            textOverflow="ellipsis"
-            align="center"
-            color="textPrimary"
-            height={50}
+          <Typography
+            noWrap={true}
+            color="textSecondary"
+            style={{fontSize: 15}}
           >
-            {`"${authorText}"`}
-          </Box>
+              {`"${authorText}"`}
+            </Typography>
         </CardContent>
         <CardActions disableSpacing >
           <Grid container alignItems="center"
@@ -66,7 +62,7 @@ class ReviewCard extends React.Component {
               size="medium"
               aria-label="share"
               onClick={() => window.open(link, '_blank', 'noopener,noreferrer')}>
-              <OpenInBrowser style={{ color: theme.palette.text.primary }} />
+              <Link style={{ color: theme.palette.text.primary }} />
             </IconButton>
           </Grid>
         </CardActions>

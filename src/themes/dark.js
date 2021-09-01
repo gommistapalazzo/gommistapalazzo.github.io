@@ -1,6 +1,6 @@
-import { createMuiTheme } from '@material-ui/core/styles';
+import { createMuiTheme, responsiveFontSizes } from '@material-ui/core/styles';
 
-const dark = createMuiTheme({
+const dark = responsiveFontSizes(createMuiTheme({
   fontSize: '1.2rem',
   '@media (min-width:600px)': {
     fontSize: '1.5rem',
@@ -38,6 +38,6 @@ const dark = createMuiTheme({
     },
     divider: '#f9826c',
   },
-});
+}));
 
 export default dark;

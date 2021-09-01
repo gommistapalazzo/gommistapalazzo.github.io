@@ -37,24 +37,25 @@ class Gallery extends React.Component {
     return (
       <Grid
         container
-        spacing={0}
+        spacing={4}
         alignItems="center"
         justify="center"
       >
-        {photos.map((photo, index) => <Grid item key={index}>
-          <Card dark style={{margin: 10}}>
-            <CardActionArea style={{padding: 10}}>
-              <CardMedia
-                visibled={this.state.ready}
-                component="img"
-                alt="Contemplative Reptile"
-                height="350"
-                image={this.makeUrl(photo.photo_reference)}
-                title="Contemplative Reptile"
-              />
-              {!this.state.ready && <Loading />}
-            </CardActionArea>
-          </Card>
+        {photos.map((photo, index) =>
+          <Grid item xs={6} key={index}>
+            <Card dark>
+              <CardActionArea style={{padding: 10}}>
+                <CardMedia
+                  visibled={this.state.ready}
+                  component="img"
+                  alt="Contemplative Reptile"
+                  height="350"
+                  image={this.makeUrl(photo.photo_reference)}
+                  title="Contemplative Reptile"
+                />
+                {!this.state.ready && <Loading />}
+              </CardActionArea>
+            </Card>
           </Grid>
         )}
       </Grid>

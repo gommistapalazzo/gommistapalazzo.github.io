@@ -1,7 +1,7 @@
 import React from "react"
 import { Card, CardContent, CardAction, IconButton } from "ui-neumorphism"
 import { CardMedia, Grid, styled, Typography } from "@material-ui/core"
-import { Call, Share, Facebook } from "@material-ui/icons"
+import { Call, Share, Facebook, Map, LocationOn } from "@material-ui/icons"
 import "ui-neumorphism/dist/index.css"
 import "./layout.css"
 import HelpIcon from "../imgs/help.svg"
@@ -36,16 +36,16 @@ class InfoCard extends React.Component {
             />
             {openingInfo.weekday_text.map((day, index) =>
               <Grid container direction="column" alignItems="center" justify="center">
-                <Grid key={index * 20} item direction="row" justify="center">
+                <Grid key={index * 20} item xs={12} direction="row">
                   <DigitalTypography
                     key={index * 40 + 1}
                     className="time-day"
-                    style={{color: theme.palette.primary.light}}
+                    style={{ color: theme.palette.primary.light }}
                     component="span">
                     {day.split(":")[0]}
                   </DigitalTypography>
                 </Grid>
-                <Grid key={index * 30 + 2} item direction="row" justify="center">
+                <Grid key={index * 30 + 2} item xs={12} direction="row" justify="center">
                   <DigitalTypography
                     key={index * 50 + 3}
                     className="time-view"
@@ -60,20 +60,30 @@ class InfoCard extends React.Component {
         </CardContent>
         <CardAction>
           <Grid container
-                direction="column"
+                direction="row"
                 alignItems="center"
                 justify="center"
                 style={{ padding: 30 }}
                 spacing={3}>
-            <Grid item>
+            <Grid item xs={3}>
               <IconButton dark style={{ marginLeft: 10, marginRight: 10, padding: 10 }} rounded text={false}
                           size="large">
-                <Call/>
+                <Call />
               </IconButton>
+            </Grid>
+            <Grid item xs={3}>
               <IconButton dark style={{ marginLeft: 10, marginRight: 10, padding: 10 }} rounded text={false}
                           size="large">
                 <Facebook />
               </IconButton>
+            </Grid>
+            <Grid item xs={3}>
+              <IconButton dark style={{ marginLeft: 10, marginRight: 10, padding: 10 }} rounded text={false}
+                          size="large">
+                <LocationOn />
+              </IconButton>
+            </Grid>
+            <Grid item xs={3}>
               <IconButton dark style={{ marginLeft: 10, marginRight: 10, padding: 10 }} rounded text={false}
                           size="large">
                 <Share />
