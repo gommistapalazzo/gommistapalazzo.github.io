@@ -25,6 +25,20 @@ body {
         height: 25vh; width: 45vw;
         margin: 1em;
     }
+
+    .time-card {
+        padding: 2em 8em;
+    }
+
+    .time-day {
+        font-family: "DS-Digital Italic", serif !important;
+        font-size: 20px;
+    }
+
+    .time-view {
+        font-family: "DS-Digital Italic", serif !important;
+        font-size: 14px;
+    }
 }
 
 /* (320x480) Smartphone, Portrait */
@@ -35,6 +49,20 @@ body {
         height: 25vh; width: 45vw;
         margin: 1em;
     }
+
+    .time-card {
+        padding: 2em 8em;
+    }
+
+    .time-day {
+        font-family: "DS-Digital Italic", serif !important;
+        font-size: 20px;
+    }
+
+    .time-view {
+        font-family: "DS-Digital Italic", serif !important;
+        font-size: 14px;
+    }
 }
 
 /* (320x480) Smartphone, Landscape */
@@ -42,7 +70,21 @@ body {
     /* insert styles here */
     .video-style {
         position: relative;
-        height: 25vh; width: 45vw;
+        height: 20vh; width: 45vw;
+    }
+
+    .time-card {
+        padding: 2em 8em;
+    }
+
+    .time-day {
+        font-family: "DS-Digital Italic", serif !important;
+        font-size: 20px;
+    }
+
+    .time-view {
+        font-family: "DS-Digital Italic", serif !important;
+        font-size: 14px;
     }
 }
 
@@ -51,7 +93,21 @@ body {
     /* insert styles here */
     .video-style {
         position: relative;
-        height: 25vh; width: 35vw;
+        height: 20vh; width: 35vw;
+    }
+
+    .time-card {
+        padding: 2em 8em;
+    }
+
+    .time-day {
+        font-family: "DS-Digital Italic", serif !important;
+        font-size: 20px;
+    }
+
+    .time-view {
+        font-family: "DS-Digital Italic", serif !important;
+        font-size: 14px;
     }
 }
 
@@ -60,7 +116,21 @@ body {
     /* insert styles here */
     .video-style {
         position: relative;
-        height: 25vh; width: 45vw;
+        height: 20vh; width: 45vw;
+    }
+
+    .time-card {
+        padding: 2em 8em;
+    }
+
+    .time-day {
+        font-family: "DS-Digital Italic", serif !important;
+        font-size: 20px;
+    }
+
+    .time-view {
+        font-family: "DS-Digital Italic", serif !important;
+        font-size: 14px;
     }
 }
 
@@ -69,8 +139,22 @@ body {
     /* insert styles here */
     .video-style {
         position: relative;
-        height: 25vh; width: 45vw;
+        height: 20vh; width: 45vw;
         margin: 1em;
+    }
+
+    .time-card {
+        padding: 2em 8em;
+    }
+
+    .time-day {
+        font-family: "DS-Digital Italic", serif !important;
+        font-size: 20px;
+    }
+
+    .time-view {
+        font-family: "DS-Digital Italic", serif !important;
+        font-size: 14px;
     }
 }
 
@@ -82,6 +166,20 @@ body {
         height: 25vh; width: 45vw;
         margin: 1em;
     }
+
+    .time-card {
+        padding: 2em 8em;
+    }
+
+    .time-day {
+        font-family: "DS-Digital Italic", serif !important;
+        font-size: 20px;
+    }
+
+    .time-view {
+        font-family: "DS-Digital Italic", serif !important;
+        font-size: 14px;
+    }
 }
 
 /* (1024x768) iPad 1 & 2, XGA */
@@ -90,6 +188,20 @@ body {
         position: relative;
         height: 45vh; width: 65vw;
         margin: 1em;
+    }
+
+    .time-card {
+        padding: 2em 8em;
+    }
+
+    .time-day {
+        font-family: "DS-Digital Italic", serif !important;
+        font-size: 26px;
+    }
+
+    .time-view {
+        font-family: "DS-Digital Italic", serif !important;
+        font-size: 20px;
     }
 }
 
@@ -100,6 +212,20 @@ body {
         height: 45vh; width: 65vw;
         margin: 1em;
     }
+
+    .time-card {
+        padding: 2em 8em;
+    }
+
+    .time-day {
+        font-family: "DS-Digital Italic", serif !important;
+        font-size: 26px;
+    }
+
+    .time-view {
+        font-family: "DS-Digital Italic", serif !important;
+        font-size: 20px;
+    }
 }
 
 /* (1024x768) iPad 1 & 2, Landscape */
@@ -108,6 +234,20 @@ body {
         position: relative;
         height: 45vh; width: 65vw;
         margin: 1em;
+    }
+
+    .time-card {
+        padding: 2em 8em;
+    }
+
+    .time-day {
+        font-family: "DS-Digital Italic", serif !important;
+        font-size: 26px;
+    }
+
+    .time-view {
+        font-family: "DS-Digital Italic", serif !important;
+        font-size: 20px;
     }
 }
 
@@ -118,6 +258,20 @@ body {
         height: 45vh; width: 65vw;
         margin: 1em;
     }
+
+    .time-card {
+        padding: 2em 8em;
+    }
+
+    .time-day {
+        font-family: "DS-Digital Italic", serif !important;
+        font-size: 26px;
+    }
+
+    .time-view {
+        font-family: "DS-Digital Italic", serif !important;
+        font-size: 20px;
+    }
 }
 
 /* (1280x720) Galaxy Note 2, WXGA */
@@ -126,6 +280,20 @@ body {
         position: relative;
         height: 45vh; width: 65vw;
         margin: 1em;
+    }
+
+    .time-card {
+        padding: 2em 8em;
+    }
+
+    .time-day {
+        font-family: "DS-Digital Italic", serif !important;
+        font-size: 26px;
+    }
+
+    .time-view {
+        font-family: "DS-Digital Italic", serif !important;
+        font-size: 20px;
     }
 }
 
@@ -136,6 +304,20 @@ body {
         height: 45vh; width: 65vw;
         margin: 1em;
     }
+
+    .time-card {
+        padding: 2em 8em;
+    }
+
+    .time-day {
+        font-family: "DS-Digital Italic", serif !important;
+        font-size: 26px;
+    }
+
+    .time-view {
+        font-family: "DS-Digital Italic", serif !important;
+        font-size: 20px;
+    }
 }
 
 /* (1280x1024) SXGA Display */
@@ -144,6 +326,20 @@ body {
         position: relative;
         height: 45vh; width: 65vw;
         margin: 1em;
+    }
+
+    .time-card {
+        padding: 2em 8em;
+    }
+
+    .time-day {
+        font-family: "DS-Digital Italic", serif !important;
+        font-size: 26px;
+    }
+
+    .time-view {
+        font-family: "DS-Digital Italic", serif !important;
+        font-size: 20px;
     }
 }
 
@@ -154,6 +350,20 @@ body {
         height: 45vh; width: 65vw;
         margin: 1em;
     }
+
+    .time-card {
+        padding: 2em 8em;
+    }
+
+    .time-day {
+        font-family: "DS-Digital Italic", serif !important;
+        font-size: 26px;
+    }
+
+    .time-view {
+        font-family: "DS-Digital Italic", serif !important;
+        font-size: 20px;
+    }
 }
 
 /* (1680x1050) WSXGA+ Display */
@@ -162,6 +372,20 @@ body {
         position: relative;
         height: 45vh; width: 65vw;
         margin: 1em;
+    }
+
+    .time-card {
+        padding: 2em 8em;
+    }
+
+    .time-day {
+        font-family: "DS-Digital Italic", serif !important;
+        font-size: 26px;
+    }
+
+    .time-view {
+        font-family: "DS-Digital Italic", serif !important;
+        font-size: 20px;
     }
 }
 
@@ -172,6 +396,20 @@ body {
         height: 45vh; width: 65vw;
         margin: 1em;
     }
+
+    .time-card {
+        padding: 2em 8em;
+    }
+
+    .time-day {
+        font-family: "DS-Digital Italic", serif !important;
+        font-size: 26px;
+    }
+
+    .time-view {
+        font-family: "DS-Digital Italic", serif !important;
+        font-size: 20px;
+    }
 }
 
 /* (1600x900) HD+ Display */
@@ -181,18 +419,18 @@ body {
         height: 45vh; width: 65vw;
         margin: 1em;
     }
-}
 
-.time-card {
-    padding: 2em 8em;
-}
+    .time-card {
+        padding: 2em 8em;
+    }
 
-.time-day {
-    font-family: "DS-Digital Italic", serif !important;
-    font-size: 26px;
-}
+    .time-day {
+        font-family: "DS-Digital Italic", serif !important;
+        font-size: 26px;
+    }
 
-.time-view {
-    font-family: "DS-Digital Italic", serif !important;
-    font-size: 20px;
+    .time-view {
+        font-family: "DS-Digital Italic", serif !important;
+        font-size: 20px;
+    }
 }

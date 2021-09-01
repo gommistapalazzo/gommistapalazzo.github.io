@@ -1,8 +1,6 @@
 import React from "react"
-import { Card, CardContent, CardAction, IconButton } from "ui-neumorphism"
-import { CardMedia, Grid, styled, Typography } from "@material-ui/core"
-import { Call, Share, Facebook, Map, LocationOn } from "@material-ui/icons"
-import "ui-neumorphism/dist/index.css"
+import { Card, CardActions, CardContent, IconButton, CardMedia, Grid, styled, Typography } from "@material-ui/core"
+import { Call, Share, Facebook, LocationOn, Telegram } from "@material-ui/icons"
 import "./layout.css"
 import HelpIcon from "../imgs/help.svg"
 import theme from "../themes/dark"
@@ -13,11 +11,32 @@ const DigitalTypography = styled(Typography)({
 })
 
 class InfoCard extends React.Component {
+
+  //TODO: load this from a configuration file
+  redirectLink(serviceName) {
+    switch (serviceName) {
+      case "facebook":
+        return "https://www.facebook.com/gommistapalazzocarmine";
+      case "map":
+        return "https://www.google.com/maps/dir//gommista+palazzo/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x133f42274dbf9017:0xdd2aee25ba26c472?sa=X&ved=2ahUKEwj265SJmt7yAhUYP-wKHX3ACn4Q9RcwFHoECFQQBA";
+      case "call":
+        return "https://www.facebook.com/gommistapalazzocarmine/about_contact_and_basic_info";
+      case "telegram":
+        return "https://t.me/gommistapalazzo_bot";
+      default:
+        throw Error("Services not available in this services")
+    }
+  }
+
+  redirectToService(serviceName) {
+    window.open(this.redirectLink(serviceName), '_blank', 'noopener,noreferrer')
+  }
+
   render() {
-    let { openingInfo, style } = this.props
+    let { openingInfo } = this.props
 
     return (
-      <Card className="time-card" style={style} dark elevation={4}>
+      <Card className="time-card" elevation={4}>
         <CardContent>
           <Grid container
                 direction="column"
@@ -58,40 +77,35 @@ class InfoCard extends React.Component {
             )}
           </Grid>
         </CardContent>
-        <CardAction>
+        <CardActions>
           <Grid container
                 direction="row"
                 alignItems="center"
                 justify="center"
-                style={{ padding: 30 }}
-                spacing={3}>
+                spacing={2}>
             <Grid item xs={3}>
-              <IconButton dark style={{ marginLeft: 10, marginRight: 10, padding: 10 }} rounded text={false}
-                          size="large">
+              <IconButton onClick={() => this.redirectToService("call")}>
                 <Call />
               </IconButton>
             </Grid>
             <Grid item xs={3}>
-              <IconButton dark style={{ marginLeft: 10, marginRight: 10, padding: 10 }} rounded text={false}
-                          size="large">
+              <IconButton onClick={() => this.redirectToService("facebook")}>
                 <Facebook />
               </IconButton>
             </Grid>
             <Grid item xs={3}>
-              <IconButton dark style={{ marginLeft: 10, marginRight: 10, padding: 10 }} rounded text={false}
-                          size="large">
+              <IconButton onClick={() => this.redirectToService("map")}>
                 <LocationOn />
               </IconButton>
             </Grid>
             <Grid item xs={3}>
-              <IconButton dark style={{ marginLeft: 10, marginRight: 10, padding: 10 }} rounded text={false}
-                          size="large">
-                <Share />
+              <IconButton onClick={() => this.redirectToService("telegram")}>
+                <Telegram />
               </IconButton>
             </Grid>
           </Grid>
 
-        </CardAction>
+        </CardActions>
       </Card>
     )
   }

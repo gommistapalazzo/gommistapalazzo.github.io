@@ -45,17 +45,13 @@ class ReviewCard extends React.Component {
             </Typography>
         </CardContent>
         <CardActions disableSpacing >
-          <Grid container alignItems="center"
+          <Grid container direction="row" alignItems="center"
                 justify="center" spacing={3}>
-            <Grid item xs={3} />
-            <Grid item xs={5}>
               <Rating name="half-rating-read"
-                      style={{ content: "center" }}
                       defaultValue={authorRate}
                       precision={0.5}
                       readOnly
               />
-            </Grid>
           </Grid>
           <Grid item xs={2}>
             <IconButton

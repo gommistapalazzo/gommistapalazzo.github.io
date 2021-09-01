@@ -1,6 +1,5 @@
 import React from "react"
-import {CardActionArea, CardMedia, Grid } from "@material-ui/core"
-import {Card} from "ui-neumorphism"
+import { Card, CardActionArea, CardMedia, Grid } from "@material-ui/core"
 import Loading from "./Loading"
 
 class Gallery extends React.Component {
@@ -43,7 +42,7 @@ class Gallery extends React.Component {
       >
         {photos.map((photo, index) =>
           <Grid item xs={6} key={index}>
-            <Card dark>
+            <Card>
               <CardActionArea style={{padding: 10}}>
                 <CardMedia
                   visibled={this.state.ready}

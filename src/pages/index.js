@@ -163,9 +163,7 @@ class Index extends React.Component {
                 />
               </Grid>
               <Grid item xs={12}>
-                <Box m={theme.spacing(0.5)}>
-                  <InfoCard openingInfo={data.googlePlacesPlace.opening_hours} />
-                </Box>
+                <InfoCard openingInfo={data.googlePlacesPlace.opening_hours} />
               </Grid>
             </Grid>
             <Box m={theme.spacing(1)}>

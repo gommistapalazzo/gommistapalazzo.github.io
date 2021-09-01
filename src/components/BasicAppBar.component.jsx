@@ -6,7 +6,8 @@ import {
   Container,
   IconButton,
   Toolbar,
-  Typography
+  Typography,
+  Drawer
 } from "@material-ui/core"
 import {Menu, Home, Info, Photo} from "@material-ui/icons"
 import theme from '../themes/dark'
@@ -18,6 +19,7 @@ class BasicAppBar extends React.Component {
     super(props, context)
     this.state = {
       ready: false,
+      drawer: false
     }
     this.loadDom = this.loadDom.bind(this);
   }
@@ -40,11 +42,14 @@ class BasicAppBar extends React.Component {
     const {child, value, changeValue} = this.props
     return (
       <Container maxWidth="xl">
+        <Drawer open={this.state.drawer} onClose={() => this.setState({drawer: false}) }>
+          <>TODO:</>
+        </Drawer>
         <AppBar position="sticky" style={{
           backgroundColor: theme.palette.background.paper
         }}>
           <Toolbar>
-            <IconButton onClick={()=> console.log("Click on menu icon")} disabled={true} edge="start" color="inherit" aria-label="menu">
+            <IconButton onClick={()=> this.setState({drawer: true})} edge="start" color="inherit" aria-label="menu">
               <Menu />
             </IconButton>
             <Typography color="textSecondary" variant="h6">
