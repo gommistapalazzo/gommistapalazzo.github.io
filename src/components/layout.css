@@ -39,6 +39,10 @@ body {
         font-family: "DS-Digital Italic", serif !important;
         font-size: 14px;
     }
+
+    .MuiDrawer-paper {
+        width: 60% !important;
+    }
 }
 
 /* (320x480) Smartphone, Portrait */
@@ -63,6 +67,10 @@ body {
         font-family: "DS-Digital Italic", serif !important;
         font-size: 14px;
     }
+
+    .MuiDrawer-paper {
+        width: 60% !important;
+    }
 }
 
 /* (320x480) Smartphone, Landscape */
@@ -85,6 +93,9 @@ body {
     .time-view {
         font-family: "DS-Digital Italic", serif !important;
         font-size: 14px;
+    }
+    .MuiDrawer-paper {
+        width: 60% !important;
     }
 }
 
@@ -109,6 +120,9 @@ body {
         font-family: "DS-Digital Italic", serif !important;
         font-size: 14px;
     }
+    .MuiDrawer-paper {
+        width: 60% !important;
+    }
 }
 
 /* (640x960) iPhone 4 & 4S */
@@ -131,6 +145,9 @@ body {
     .time-view {
         font-family: "DS-Digital Italic", serif !important;
         font-size: 14px;
+    }
+    .MuiDrawer-paper {
+        width: 60% !important;
     }
 }
 
@@ -156,6 +173,9 @@ body {
         font-family: "DS-Digital Italic", serif !important;
         font-size: 14px;
     }
+    .MuiDrawer-paper {
+        width: 60% !important;
+    }
 }
 
 /* (720x1280) Galaxy Nexus, Landscape */
@@ -180,6 +200,9 @@ body {
         font-family: "DS-Digital Italic", serif !important;
         font-size: 14px;
     }
+    .MuiDrawer-paper {
+        width: 60% !important;
+    }
 }
 
 /* (1024x768) iPad 1 & 2, XGA */
@@ -202,6 +225,9 @@ body {
     .time-view {
         font-family: "DS-Digital Italic", serif !important;
         font-size: 20px;
+    }
+    .MuiDrawer-paper {
+        width: 60% !important;
     }
 }
 
@@ -226,6 +252,9 @@ body {
         font-family: "DS-Digital Italic", serif !important;
         font-size: 20px;
     }
+    .MuiDrawer-paper {
+        width: 60% !important;
+    }
 }
 
 /* (1024x768) iPad 1 & 2, Landscape */
@@ -248,6 +277,9 @@ body {
     .time-view {
         font-family: "DS-Digital Italic", serif !important;
         font-size: 20px;
+    }
+    .MuiDrawer-paper {
+        width: 60% !important;
     }
 }
 
@@ -272,10 +304,16 @@ body {
         font-family: "DS-Digital Italic", serif !important;
         font-size: 20px;
     }
+
 }
 
 /* (1280x720) Galaxy Note 2, WXGA */
 @media only screen and (min-device-width: 720px) and (max-device-width: 1280px) {
+
+    .MuiDrawer-paper {
+        width: 60% !important;
+    }
+
     .video-style {
         position: relative;
         height: 45vh; width: 65vw;
@@ -318,6 +356,7 @@ body {
         font-family: "DS-Digital Italic", serif !important;
         font-size: 20px;
     }
+
 }
 
 /* (1280x1024) SXGA Display */
@@ -326,6 +365,9 @@ body {
         position: relative;
         height: 45vh; width: 65vw;
         margin: 1em;
+    }
+    .MuiDrawer-paper {
+        width: 60% !important;
     }
 
     .time-card {
@@ -433,4 +475,19 @@ body {
         font-family: "DS-Digital Italic", serif !important;
         font-size: 20px;
     }
+}
+
+.wrapper{
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    padding-bottom: 10;
+}
+
+.MuiDrawer-paper {
+    width: 30% !important;
+}
+
+@media (max-width: 1200px) {
+
 }
